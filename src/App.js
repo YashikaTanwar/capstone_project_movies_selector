@@ -1,0 +1,18 @@
+import RegisterPage from "../src/pages/RegisterPage/RegisterPage";
+import GenrePage from "./pages/GenrePage/GenrePage";
+import "./pages/RegisterPage/RegisterPage.module.css";
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+function App() {
+  return (
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/register" element={<RegisterPage/>}></Route>
+          <Route path="/genre" element={<GenrePage/>}></Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default App;

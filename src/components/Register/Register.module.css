@@ -1,0 +1,91 @@
+*{
+    color: white;
+    
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    background-color: black;
+    flex-direction: row;
+}
+.content_image{
+    height: 99.4vh;
+    width: 45vw;
+    position: relative;
+}
+.content_image div #discover{
+    position: absolute;
+    bottom: 80px;
+    font-size: 43px;
+    left:60px;
+    background: none;
+}
+#mainimage{
+    height: 100%;
+    width: 45vw;
+}
+.right h1{
+    font-family: "single-day",cursive;
+    color: #72DB73;
+    font-weight: 400;
+    font-size: 30px;
+    text-align: center;
+}
+#account{
+    text-align: center;
+    color: white;
+    margin: 10px 0px;
+}
+.right{
+    margin: 0px 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.right p{
+    font-size: 14px;
+    color: #7c7c7c;
+}
+.right span{
+    color: #7c7c7c;
+}
+.right p span{
+    color: #72DB73;
+}
+.right input{
+    height: 50px;
+    width: 430px;
+    margin: 8px 0px;
+    padding: 10PX;
+    font-size: 16px;
+    color: #7c7c7c;
+    border-radius: 5px;
+    outline:none;
+    background-color: #292929;
+}
+.right input:focus{
+    border: 2px solid #72DB73;
+}
+.right button{
+    height: 45px;
+    width: 430px;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 40px 0px 10px 0px;
+    background-color:#72DB73;
+    border-radius: 28px;
+    cursor: pointer;
+}
+#checkbox{
+    height: 15px;
+    width: 15px;
+    outline: none;
+    border: none;
+    margin: 10px 10px 0px 0px ;
+}
+#privacy{
+    margin-top: 10px;
+}
+.error{
+    color: red;
+}

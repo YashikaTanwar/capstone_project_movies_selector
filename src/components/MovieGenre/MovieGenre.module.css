@@ -1,0 +1,77 @@
+.container{
+    height: 100vh;
+    display: flex;
+    background-color: black;
+    box-sizing: border-box;
+    padding: 40px;
+}
+.leftcontainer{
+    width: 40vw;
+    margin-left: 50px;
+}
+.leftcontainer #logo{
+    font-family: "single-day",cursive;
+    color: #72DB73;
+    font-weight: 400;
+    font-size: 41px;
+    margin-top: 60px;
+}
+.leftcontainer #entertainment{
+    margin-top: 40px;
+    font-size: 58px;
+    font-weight:700;
+}
+.rightcontainer{
+    height: 80vh;
+    width: 60vw;
+    margin-left: 100px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+}
+.error{
+    color: red;
+    padding-top: 20px;
+}
+.rightcontainer div:hover {
+    outline: 3px solid #11B800;
+  }
+
+.rightcontainer div{
+    cursor: pointer;
+    height: 160px;
+    width: 140px;
+    flex: 0 0 calc(33% - 20px);
+    margin: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    outline: 3px solid white;
+}
+.rightcontainer div img{
+    height:110px;
+    justify-content: center;
+    width:225px;
+    padding: 20px 10px 0px 10px;
+}
+.rightcontainer div h3{
+    font-size: 22px;
+    font-weight: 500;
+    margin: 10px 0px 0px 20px;
+}
+.nextpage{
+    background-color: #148A08;
+    color: white;
+    border: none;
+    outline: none;
+    width: 150px;
+    height: 44px;
+    font-size: 19px;
+    border-radius: 50px;
+    position: absolute;
+    cursor: pointer;
+    right: 60px;
+    margin-top: 567px;
+}
