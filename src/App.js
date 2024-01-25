@@ -7,12 +7,11 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/register" element={<RegisterPage/>}></Route>
+          <Route path="/" element={<RegisterPage/>}></Route>
           <Route path="/genre" element={<GenrePage/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
   );
 }
-
 export default App;

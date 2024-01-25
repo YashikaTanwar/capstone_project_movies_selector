@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import styles from './MovieGenre.module.css'
 
@@ -76,24 +76,41 @@ const DEFAULT_GENRES = [
   }
 ]
 function MovieGenre() {
+  const [categories, setCategories] = useState([]);
   const [lengthError, setlengthError] = useState(false);
+
+  useEffect(() => {
+    console.log("categories", categories);
+  }, [categories]);
+
+  const RemoveCategory=(value)=>{
+    const newCategoryList=categories.filter((category)=>category !== value);
+    console.log(newCategoryList);
+    setCategories(newCategoryList);
+};
   return (
     <div className={styles.container}>
       <div className={styles.leftcontainer}>
         <h2 id={styles.logo}>Super App</h2>
         <h2 id={styles.entertainment}>Choose your entertainment category</h2>
         <div>
+          {categories.map((category) => (
+            <div style={{ color: "white" }} key={category}>{category}<button onClick={()=>RemoveCategory(category)}>CROSS</button></div>
+          ))}
           {lengthError && <p className={styles.error}>Minimum 3 categories required</p>}
         </div>
       </div>
 
       <div className={styles.rightcontainer}>
-          {DEFAULT_GENRES.map((genre, idx) => (
-            <BlockCard
-              key={genre.id}
-              genreDetails={genre}
-            />
-          ))}
+        {DEFAULT_GENRES.map((genre, idx) => (
+          <BlockCard
+            genreDetails={genre}
+            key={genre.id}
+            idx={idx}
+            setCategories={setCategories}
+            categoryList={categories}
+          />
+        ))}
         <button className={styles.nextpage}>Next Page</button>
       </div>
     </div>
