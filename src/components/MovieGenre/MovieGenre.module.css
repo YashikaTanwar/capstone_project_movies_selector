@@ -35,9 +35,9 @@
     color: red;
     padding-top: 20px;
 }
-.rightcontainer div:hover {
+/* .rightcontainer div:hover {
     outline: 3px solid #11B800;
-  }
+  } */
 
 .rightcontainer div{
     cursor: pointer;
@@ -48,7 +48,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    outline: 3px solid white;
+    /* outline: 3px solid white; */
 }
 .rightcontainer div img{
     height:110px;
@@ -77,4 +77,19 @@
 }
 .nextpage:hover{
     outline: 2px solid white;
+}
+.category div{
+    color: "white";
+    width:"100px";
+    display:"flex";
+    height:"30px";
+    padding:"3px";
+    background: green;
+    width: 120px;
+    height: 30px;
+    padding: 2px;
+    border-radius: 18px;
+    text-align: center;
+    margin: 5px;
+    flex-wrap: wrap;
 }

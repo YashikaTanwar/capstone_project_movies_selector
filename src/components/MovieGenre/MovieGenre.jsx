@@ -97,29 +97,39 @@ function MovieGenre() {
     setCategories(newCategoryList);
 };
 
-    const handleSubmit=()=>{
-      if(categories.length ==0)
+    const handleSubmit=(event)=>{
+      event.preventDefault();
+      // if min. 3 genre are not selected then error message will pop-up 
+      if(categories.length <3)
       {
         setlengthError(true);
         return;
       }
-      localStorage.setItem("genre",categories);
-      navigate("/home");
+      // else will save all genres to local storage 
+      else{
+        setlengthError(false);
+        localStorage.setItem("genre",categories);
+        navigate("/home");
+      }
     }
   return (
     <div className={styles.container}>
       <div className={styles.leftcontainer}>
         <h2 id={styles.logo}>Super App</h2>
         <h2 id={styles.entertainment}>Choose your entertainment category</h2>
-        <div>
+        <div className={styles.category}>
           {
             categories.map((category) => (
-              <div style={{ color: "white" }} key={category}>{category}
-              <button onClick={()=>RemoveCategory(category)}>CROSS</button>
+              <div  key={category}>{category}
+              <button style={{background:"green",border:"none",cursor:"pointer"}} 
+              onClick={()=>RemoveCategory(category)}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X </button>
               </div>  
             ))
           }
-          {lengthError ?(<p className={styles.error}>Minimum 3 categories required</p>):(<></>) }
+          {lengthError ?(<p className={styles.error}>Minimum 3 categories required</p>)
+          :(
+              <></>
+          ) }
         </div>
       </div>
 
@@ -131,9 +141,10 @@ function MovieGenre() {
             idx={idx}
             setCategories={setCategories}
             categoryList={categories}
+            RemoveCategory={RemoveCategory}
           />
         ))}
-        <button className={styles.nextpage} onSubmit={handleSubmit}>Next Page</button>
+        <button className={styles.nextpage} onClick={handleSubmit}>Next Page</button>
       </div>
     </div>
   )

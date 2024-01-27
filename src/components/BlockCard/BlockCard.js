@@ -1,6 +1,8 @@
-import React from 'react'
+import {React,useState} from 'react'
 
 function BlockCard(props) {
+  const [isSelected,setisSelected]=useState(false);
+
   const addValuesToCategories = (value) => {
     const existingValue = props.categoryList.filter(
       (category) => category === value
@@ -14,12 +16,18 @@ function BlockCard(props) {
     }
   }
   return (
-    <div onClick={() => addValuesToCategories(props.genreDetails.id)}
+    <div 
+    onClick={() => {
+      addValuesToCategories(props.genreDetails.id);
+      // this will negate isSelected value i.e. unselect the value
+      setisSelected(!isSelected); 
+    }}
       style={{
         background: props.genreDetails["color"],
         color: "white",
         padding: "16px",
-        borderRadius: "12px"
+        borderRadius: "12px",
+        border:`${isSelected ? "4px solid green":"4px solid white"}`
       }}
       key={props.Key}
     >
