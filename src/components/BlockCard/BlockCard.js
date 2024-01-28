@@ -7,7 +7,6 @@ function BlockCard(props) {
     const existingValue = props.categoryList.filter(
       (category) => category === value
     )
-      
     if (existingValue.length === 0) {
       props.setCategories([...props.categoryList, value]);
     }
