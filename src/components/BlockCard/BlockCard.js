@@ -7,12 +7,12 @@ function BlockCard(props) {
     const existingValue = props.categoryList.filter(
       (category) => category === value
     )
-      
     if (existingValue.length === 0) {
       props.setCategories([...props.categoryList, value]);
     }
     else {
-      //remove it from the array
+      const newCategoryList=props.categoryList.filter((category)=>category !== value);
+      props.setCategories(newCategoryList);
     }
   }
   return (
@@ -21,6 +21,7 @@ function BlockCard(props) {
       addValuesToCategories(props.genreDetails.id);
       // this will negate isSelected value i.e. unselect the value
       setisSelected(!isSelected); 
+      props.RemoveCategory(props.genreDetails.id);
     }}
       style={{
         background: props.genreDetails["color"],
