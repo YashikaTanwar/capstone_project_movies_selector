@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
+// Navigate is used to move to next page easily
 
+import { useNavigate } from 'react-router-dom' 
 import styles from './MovieGenre.module.css'
 
 import action from '../../assets/images/action.png'
@@ -76,6 +78,8 @@ const DEFAULT_GENRES = [
   }
 ]
 function MovieGenre() {
+  const navigate = useNavigate();
+
   const [categories, setCategories] = useState([]);
   const [lengthError, setlengthError] = useState(false);
 
@@ -83,21 +87,49 @@ function MovieGenre() {
     console.log("categories", categories);
   }, [categories]);
 
+  // remove selected category
   const RemoveCategory=(value)=>{
+    // this will deselect value 
+    // categories consist of an array of all selected genre
+    // the value which we want to deselect is named as 'value' 
     const newCategoryList=categories.filter((category)=>category !== value);
     console.log(newCategoryList);
     setCategories(newCategoryList);
 };
+
+    const handleSubmit=(event)=>{
+      event.preventDefault();
+      // if min. 3 genre are not selected then error message will pop-up 
+      if(categories.length <3)
+      {
+        setlengthError(true);
+        return;
+      }
+      // else will save all genres to local storage 
+      else{
+        setlengthError(false);
+        localStorage.setItem("genre",categories);
+        navigate("/home");
+      }
+    }
   return (
     <div className={styles.container}>
       <div className={styles.leftcontainer}>
         <h2 id={styles.logo}>Super App</h2>
         <h2 id={styles.entertainment}>Choose your entertainment category</h2>
-        <div>
-          {categories.map((category) => (
-            <div style={{ color: "white" }} key={category}>{category}<button onClick={()=>RemoveCategory(category)}>CROSS</button></div>
-          ))}
-          {lengthError && <p className={styles.error}>Minimum 3 categories required</p>}
+        <div className={styles.category}>
+          {
+            categories.map((category) => (
+              <div  key={category}>{category}
+              <button style={{background:"green",border:"none",cursor:"pointer"}} 
+              onClick={()=>RemoveCategory(category)}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X </button>
+              </div>  
+            ))
+          }
+          {lengthError ?(<p className={styles.error}>Minimum 3 categories required</p>)
+          :(
+              <></>
+          ) }
         </div>
       </div>
 
@@ -109,9 +141,10 @@ function MovieGenre() {
             idx={idx}
             setCategories={setCategories}
             categoryList={categories}
+            RemoveCategory={RemoveCategory}
           />
         ))}
-        <button className={styles.nextpage}>Next Page</button>
+        <button className={styles.nextpage} onClick={handleSubmit}>Next Page</button>
       </div>
     </div>
   )
