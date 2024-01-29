@@ -120,7 +120,7 @@ function MovieGenre() {
         <div className={styles.category}>
           {
             categories.map((category) => (
-              <div  key={category}>{category}
+              <div  key={category}> {category}
               <button style={{background:"green",border:"none",cursor:"pointer"}} 
               onClick={()=>RemoveCategory(category)}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X </button>
               </div>  
