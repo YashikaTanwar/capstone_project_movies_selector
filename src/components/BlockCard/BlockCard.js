@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import {React,useState} from 'react'
 
 function BlockCard(props) {
@@ -15,13 +16,20 @@ function BlockCard(props) {
       props.setCategories(newCategoryList);
     }
   }
+  
+  // when we will click on cross button the green outline of genre cards will also get removed using this functionality
+  useEffect(()=>{
+      const isExists=
+          props.categoryList.includes(props.genreDetails.id) === true;
+      setisSelected(isExists);
+  });
+
   return (
     <div 
     onClick={() => {
       addValuesToCategories(props.genreDetails.id);
       // this will negate isSelected value i.e. unselect the value
       setisSelected(!isSelected); 
-      props.RemoveCategory(props.genreDetails.id);
     }}
       style={{
         background: props.genreDetails["color"],
