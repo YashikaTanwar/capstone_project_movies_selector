@@ -1,0 +1,10 @@
+.container{
+    background-color:  #F1C75B;
+    height: 535px;
+    width: 470px;
+    /* margin: 20px; */
+}
+h2,p{
+    padding: 20px 30px;
+    color: black;
+}
