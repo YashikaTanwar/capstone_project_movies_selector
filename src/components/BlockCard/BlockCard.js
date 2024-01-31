@@ -22,6 +22,9 @@ function BlockCard(props) {
       const isExists=
           props.categoryList.includes(props.genreDetails.id) === true;
       setisSelected(isExists);
+      const value=
+          props.categoryList.includes(props.genreDetails.id) === true;
+      setisSelected(value);
   });
 
   return (
