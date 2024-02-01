@@ -35,9 +35,6 @@
     color: red;
     padding-top: 20px;
 }
-/* .rightcontainer div:hover {
-    outline: 3px solid #11B800;
-  } */
 
 .rightcontainer div{
     cursor: pointer;

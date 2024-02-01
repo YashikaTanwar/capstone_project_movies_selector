@@ -43,7 +43,7 @@ function BlockCard(props) {
       }}
       key={props.Key}
     >
-      <p>{props.genreDetails.id}</p>
+      <p style={{padding:"-1px"}}>{props.genreDetails.id}</p>
       {props.genreDetails.image}
     </div>
   )

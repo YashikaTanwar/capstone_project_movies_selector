@@ -1,21 +1,15 @@
 import React, { useReducer } from 'react'
 import Profile from '../../assets/images/home_headphones.png'
 import styles from '../ProfileCard/ProfileCard.module.css'
+
+// this function is used to parse through all the values of user so that it can be displayed on the screen  
+// userData is a variable in which values are getting stored into. 
 function ProfileCard() {
     let userDetails=localStorage.getItem("userData");
-    // let genres=localStorage.getItem("genre")
     if(userDetails)
     {
-        console.log("before",userDetails);
         userDetails=JSON.parse(userDetails);
-        console.log("after",userDetails);
     }
-    // if(genres)
-    // {
-    //     console.log("before",genres);
-    //     genres=JSON.parse(genres);
-    //     console.log("after",genres); 
-    // }
   return (
     <div className={styles.container}>
         <div className={styles.image}>
@@ -27,15 +21,6 @@ function ProfileCard() {
                 <p style={{color:"white",fontSize:"2rem",height:"40px"}}>{userDetails.email}</p>
                 <p style={{color:"white",fontSize:"3rem",height:"40px"}}>{userDetails.username}</p>
             </div>
-            {/* <div>
-                <div>
-                    <p>{genres}</p>
-                    <p></p>
-                </div>
-                <div>
-
-                </div>
-            </div> */}
         </div>
         
     </div>

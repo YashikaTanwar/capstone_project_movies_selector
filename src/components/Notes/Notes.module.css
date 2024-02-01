@@ -4,7 +4,6 @@
     width: 470px;
     /* margin: 20px; */
 }
-h2,p{
-    padding: 20px 30px;
+.container h2,p{
     color: black;
 }

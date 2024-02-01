@@ -36,41 +36,40 @@ function Register() {
     let isValid=true;
     // these if conditions check whether the input values are empty or not 
     // if empty i.e. if trim ==0 then isvalid will be set to false else it will skip this condition
-    // if(!formData.Name.trim().length)
-    // {
-    //     // setnameError(true);
-    //     isValid=false;
-    //     setnameError({...nameError,Name:"Fill Name Field"});
-    // }
+    if(!formData.Name.trim().length)
+    {
+        // setnameError(true);
+        isValid=false;
+        setnameError({...nameError,Name:"Fill Name Field"});
+    }
 
-    // if(!formData.email.trim().length)
-    // {
-    //   isValid=false;
-    //   setnameError({...nameError,email:"Fill Email"});
-    // }
+    if(!formData.email.trim().length)
+    {
+      isValid=false;
+      setnameError({...nameError,email:"Fill Email"});
+    }
 
-    // if(!formData.mobile.trim().length)
-    // {
-    //   isValid=false;
-    //   setnameError({...nameError,mobile:"Fill mobile"});
-    // }
+    if(!formData.mobile.trim().length)
+    {
+      isValid=false;
+      setnameError({...nameError,mobile:"Fill mobile"});
+    }
 
-    // if(!formData.username.trim().length)
-    // {
-    //   isValid=false;
-    //   setnameError({...nameError,username:"Fill UserName"});
-    // }
+    if(!formData.username.trim().length)
+    {
+      isValid=false;
+      setnameError({...nameError,username:"Fill UserName"});
+    }
 
-    // if(!formData.isAgreed)
-    // {
-    //   isValid=false;
-    //   setnameError({...nameError,isAgreed:"Check mark checkbox"});
-    // }
+    if(!formData.isAgreed)
+    {
+      isValid=false;
+      setnameError({...nameError,isAgreed:"Check mark checkbox"});
+    }
 
     // store values in local storage
     if(isValid)
     {
-      // isValid=false;
       localStorage.setItem("userData",JSON.stringify(formData));
       navigate("/genre");
     }
@@ -103,7 +102,7 @@ function Register() {
           onChange={(event) => { handlechange(event) }} />
         {nameError.mobile?(<p className={styles.error}>"Enter your Mobile"</p>):(<></>)}
 
-        <span><input type="checkbox" id={styles.checkbox} name='check'
+        <span><input type="checkbox" id={styles.checkbox} name='isAgreed'
           onChange={(e) => setformData({ ...formData, [e.target.name]: e.target.checked })} />
           share my registration data with Superapp</span>
         {nameError.isAgreed?(<p className={styles.error}>"check mark the box"</p>):(<></>)}
