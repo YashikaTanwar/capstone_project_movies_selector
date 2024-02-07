@@ -1,0 +1,41 @@
+.container{
+    height: 79.7vh;
+    width: 22vw;
+    background-color: antiquewhite;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.image{
+    height: 200px;
+    width: 22vw;
+}
+.image img{
+    border-radius: 15px;
+}
+.title{
+    font-size: 32px;
+    font-weight: 500;
+    padding: 15px;
+}
+.description{
+    font-size:17.25px;
+    font-weight: 400;
+    color: black;
+    background-color: white;
+    padding: 15px;
+}
+button{
+    margin-bottom: 20px;
+    margin-left: 200px;
+}
+.browse{
+    color: white;
+    background-color: green;
+    border-radius:25px;
+    font-size: 17px;
+    width: 120px;
+    height: 40px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}

@@ -31,7 +31,7 @@ function Notes() {
         margin:"15px 20px",
         outline:"none",
         padding:"0px 15px",
-        height:"411px",
+        height:"280px",
         width:"427px",
         background:"#F1C75B",
         color:"black",
