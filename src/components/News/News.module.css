@@ -1,18 +1,18 @@
 .container{
     height: 79.7vh;
-    width: 22vw;
+    width: 25vw;
     background-color: white;
     margin-top: 40px;
     margin-bottom: 40px;
 }
 .image{
     height: 250px;
-    width: 22vw;
+    width: 25vw;
 }
 .image img{
     border-radius: 10px;
     height: 360px;
-    width: 22vw;
+    width: 25vw;
 }
 .info{
     font-size: 20px;
