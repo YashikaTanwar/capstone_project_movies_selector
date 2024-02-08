@@ -1,22 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../News/News.module.css'
+import { getNewsDetails } from '../../apis/news';
 function News() {
+    const [news,setnews]=useState([]);
+    
+    useEffect(()=>{
+        fetchnews();
+    },[]);
+
+    const fetchnews = async()=>{
+        const result=await getNewsDetails();
+        setnews(result);
+    }
     return (
         <div>
         <div className={styles.container}>
             <div className={styles.image}>
-                <img src="" alt="image" />
+                <img src={news.urlToImage} alt="image" />
             </div>
-            <div className={styles.title}>Want to climb Mount Everest</div>
-            <div className={styles.description}>
-                <p>In the years since human
-                beings first reached the summit of Mount Everest in 1953,
-                climbing the world's highest mountain has changed dramatically.
-                Today, hundreds of mountaineers manage the feat each year thanks
-                to improvements in knowledge, technology, and the significant 
-                infrastructure provided by commercially guided expeditions that
-                provide a veritable highway up the mountain for those willing to 
-                accept both the......</p>
+            <div className={styles.info}>{news.title}</div>
+            <div className={styles.desc}>
+                <p>{news.description}</p>
             </div>
         </div>
         <button className={styles.browse}>Browse</button>
