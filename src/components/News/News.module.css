@@ -1,9 +1,9 @@
 .container{
-    height: 79.7vh;
+    height: 82.7vh;
     width: 25vw;
     background-color: white;
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
 }
 .image{
     height: 250px;
@@ -11,7 +11,7 @@
 }
 .image img{
     border-radius: 10px;
-    height: 360px;
+    height: 340px;
     width: 25vw;
 }
 .info{

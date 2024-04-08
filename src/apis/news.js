@@ -10,7 +10,7 @@ export const getNewsDetails=async()=>{
         // await keyword pause the execution of a function until a promise is resolved
         const response=await axios.get(reqUrl);
         console.log(response.data.articles);
-        return response.data.articles[18];
+        return response.data.articles[6];
     } catch (error) {
         console.log(error);
         alert("something went wrong please try again later");
