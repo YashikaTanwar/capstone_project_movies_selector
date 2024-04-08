@@ -10,14 +10,15 @@
     width: 25vw;
 }
 .image img{
-    border-radius: 10px;
     height: 340px;
     width: 25vw;
 }
 .info{
     font-size: 20px;
     font-weight: 500;
-    padding: 15px;
+    padding: 19px;
+    background-color: #000;
+    opacity:.5;
 }
 .desc{
     font-size:17.25px;
