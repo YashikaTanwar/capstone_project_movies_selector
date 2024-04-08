@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import styles from '../News/News.module.css'
+
+// we are importing an api here
 import { getNewsDetails } from '../../apis/news';
 function News() {
     const [news,setnews]=useState([]);
     
+    // to read data from api we are using useEffect here
     useEffect(()=>{
         fetchnews();
     },[]);
