@@ -3,5 +3,13 @@
     height: 17.3vh;
     width: 507px;
     margin-left: 40px;
-    padding-left: 20px;
+}
+.info{
+    border-radius: 5px;
+    background-color: rgb(181, 70, 189);
+    width: 507px;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
 }

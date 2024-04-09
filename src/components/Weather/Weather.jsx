@@ -8,7 +8,12 @@ const Weather=()=>{
         <div>
             <div>
                 <div className={styles.container}>
-                    
+                    <table className={styles.info}>
+                        <tr>
+                            <td>Date</td>
+                            <td>Time</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
