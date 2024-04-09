@@ -7,8 +7,11 @@ const Weather=()=>{
     return(
         <div>
             <div>
-                
+                <div className={styles.container}>
+                    
+                </div>
             </div>
         </div>
     )
 }
+export default Weather

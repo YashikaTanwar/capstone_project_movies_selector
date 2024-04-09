@@ -7,13 +7,13 @@
     margin: 40px 10px 20px 40px;
     border-radius: 10px;
     width: 507px;
-    height: 250px;
+    height: 230px;
     background-color: #5746EA;
     padding: 10px;
     display: flex;
 }
 #headphone{
-    height: 230px;
+    height: 210px;
     width: 150px;
     background-color: #5746EA;
 }
