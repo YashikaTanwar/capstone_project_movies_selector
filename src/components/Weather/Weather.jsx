@@ -11,7 +11,8 @@ const Weather=()=>{
     const fetchWeatherDetails = async () => {
         try {
             const result = await getWeatherDetails();
-            // setWeather(result.current);
+            console.log(result);
+            setWeather(result.current.pressure_mb);
             setDate(result.location.localTime);
         } catch (error) {
             console.error('Error fetching weather details:', error);
@@ -21,7 +22,7 @@ const Weather=()=>{
         <div>
             <div>
                 <div className={styles.container}>
-                    <div className={styles.info}>
+                    <div className={styles.containerinfo}>
                             <span id={styles.date}>Date</span>
                             <span id={styles.time}>Time</span>
                     </div>
@@ -31,7 +32,7 @@ const Weather=()=>{
                     </div>
                     <div className={styles.info}>
                             <span>Date</span>
-                            <span>Time</span>
+                            <span>{weather.current.condition.text}</span>
                     </div>    
                 </div>
             </div>

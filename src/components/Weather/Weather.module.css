@@ -4,7 +4,7 @@
     width: 507px;
     margin-left: 40px;
 }
-.info{
+.containerinfo{
     border-radius: 5px;
     width: 507px;
     height: 40px;
@@ -12,6 +12,9 @@
     text-align: center;
     font-weight: bold;
 }
-.info span{
+.conatinerinfo span{
     background-color: rgb(181, 70, 189);
+}
+#date,#time{
+    text-align: center;
 }
