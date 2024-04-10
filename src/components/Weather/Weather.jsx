@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-import { getweatherDetails } from '../../apis/weather';
+import { getWeatherDetails } from '../../apis/weather';
 import styles from '../Weather/Weather.module.css';
 const Weather=()=>{
     const[date,setDate]=useState("");
@@ -7,12 +7,16 @@ const Weather=()=>{
 
     useEffect(()=>{
         fetchWeatherDetails();   
-    })
-    const fetchWeatherDetails=async()=>{
-        const result=await getweatherDetails();
-        setWeather(result.current);
-        setDate(result.location.localTime);
-    }
+    },[]);
+    const fetchWeatherDetails = async () => {
+        try {
+            const result = await getWeatherDetails();
+            // setWeather(result.current);
+            setDate(result.location.localTime);
+        } catch (error) {
+            console.error('Error fetching weather details:', error);
+        }
+    };
     return(
         <div>
             <div>
