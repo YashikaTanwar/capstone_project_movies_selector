@@ -3,32 +3,32 @@ import { getweatherDetails } from '../../apis/weather';
 import styles from '../Weather/Weather.module.css';
 const Weather=()=>{
     const[date,setDate]=useState("");
-    const[time,setTime]=useState("");
-    const[weather,setWeather]=useState(false); 
+    const[weather,setWeather]=useState(true); 
 
     useEffect(()=>{
-        const fetchWeatherDetails=async()=>{
-
-        }
+        fetchWeatherDetails();   
     })
+    const fetchWeatherDetails=async()=>{
+        const result=await getweatherDetails();
+        setWeather(result.current);
+        setDate(result.location.localTime);
+    }
     return(
         <div>
             <div>
                 <div className={styles.container}>
-                    <table className={styles.info}>
-                        <tr>
-                            <td>Date</td>
-                            <td>Time</td>
-                        </tr>
-                        <tr>
-                            <td>Date</td>
-                            <td>Time</td>
-                        </tr>
-                        <tr>
-                            <td>Date</td>
-                            <td>Time</td>
-                        </tr>
-                    </table>
+                    <div className={styles.info}>
+                            <span id={styles.date}>Date</span>
+                            <span id={styles.time}>Time</span>
+                    </div>
+                    <div className={styles.info}>
+                            <span>{date}</span>
+                            <span>{weather}</span>
+                    </div>
+                    <div className={styles.info}>
+                            <span>Date</span>
+                            <span>Time</span>
+                    </div>    
                 </div>
             </div>
         </div>

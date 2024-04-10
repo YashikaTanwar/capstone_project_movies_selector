@@ -12,6 +12,6 @@
     text-align: center;
     font-weight: bold;
 }
-.info >:first-child{
+.info span{
     background-color: rgb(181, 70, 189);
 }
