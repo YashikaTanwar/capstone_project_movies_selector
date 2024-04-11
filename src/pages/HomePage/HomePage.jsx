@@ -10,18 +10,21 @@ import styles from '../HomePage/HomePage.module.css'
 function HomePage() {
   return (
     <div className={styles.home} style={{ background: "black" }}>
-      <div style={{display:"flex"}}>
-        
-        <div>
-          <ProfileCard /><Weather />
-        </div>
-        
-        <div className={styles.note} style={{ margin: "40px" }}><Notes /></div>
-      
-      </div>
-      
       <div>
-          <div><Timer /></div>
+        
+        <div style={{display:"flex"}}>
+          <div>
+            <ProfileCard /><Weather />
+          </div>          
+          <div className={styles.note} style={{ margin: "40px" }}><Notes /></div>
+        </div>
+
+        <div>
+            <div><Timer /></div>
+        </div>
+      </div>
+      <div>
+        <div><News/></div>
       </div>
       
 

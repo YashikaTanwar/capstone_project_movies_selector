@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import style from '../Timer/Timer.module.css'
 const Timer=()=>{
     
     const[seconds,setSeconds]=useState(0);
@@ -9,17 +10,44 @@ const Timer=()=>{
         <div
         style={
             {
+                height:"20vh",
                 width:"67vw",
-                background:"orange",
+                background:"#1E2641",
                 marginLeft:"40px",
-                padding:"20px"
+                padding:"20px 220px 20px 220px",
             }
         }>
-            <div>
-                <p>Hours</p>
-                <p>Minutes</p>
-                <p>Seconds</p>
+            <div className={style.time} style={{display:"flex"}}>
+                <p style={{color:"white",margin:"0px 60px 0px 60px",fontSize:"20px"}}>Hours</p>
+                <p style={{color:"white",margin:"0px 60px 0px 60px",fontSize:"20px"}}>Minutes</p>
+                <p style={{color:"white",margin:"0px 60px 0px 60px",fontSize:"20px"}}>Seconds</p>
             </div>
+            <div className={style.time} style={{display:"flex"}}>
+                <p style={{color:"white",margin:"0px 60px 0px 60px",fontSize:"20px"}}><img src=""/></p>
+                <p style={{color:"white",margin:"0px 60px 0px 60px",fontSize:"20px"}}><img src=""/></p>
+                <p style={{color:"white",margin:"0px 60px 0px 60px",fontSize:"20px"}}><img src=""/></p>
+            </div>
+            <div className={style.time} style={{display:"flex"}}>
+                <p style={{color:"white",margin:"0px 60px 0px 60px",fontSize:"20px"}}>0</p>
+                <p style={{color:"white",margin:"0px 60px 0px 60px",fontSize:"20px"}}>0</p>
+                <p style={{color:"white",margin:"0px 60px 0px 60px",fontSize:"20px"}}>Seconds</p>
+            </div>
+            <div className={style.time} style={{display:"flex"}}>
+                <p style={{color:"white",margin:"0px 60px 0px 60px",fontSize:"20px"}}><img src=""/></p>
+                <p style={{color:"white",margin:"0px 60px 0px 60px",fontSize:"20px"}}><img src=""/></p>
+                <p style={{color:"white",margin:"0px 60px 0px 60px",fontSize:"20px"}}><img src=""/></p>
+            </div>
+            <button 
+                style={
+                    {backgroundColor:"red",
+                    color:"white",
+                    width:"20vw",
+                    height:"40px",
+                    outline:"none",
+                    borderRadius:"10px",
+                    border:"none",
+                fontSize:"17px"}
+                    }>Stop</button>
         </div>
     )
 }
