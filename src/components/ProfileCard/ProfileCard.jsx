@@ -10,7 +10,12 @@ function ProfileCard() {
     {
         userDetails=JSON.parse(userDetails);
     }
-  return (
+    let genre=localStorage.getItem("genre");
+    if(genre)
+    {
+        genre=JSON.parse(genre);
+    }
+    return (
     <div className={styles.container}>
         <div className={styles.image}>
             <img src={Profile} alt="" id={styles.headphone}/>
