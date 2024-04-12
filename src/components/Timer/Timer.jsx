@@ -15,18 +15,36 @@ const Timer=()=>{
         setSeconds((prev) => prev+1)
     }
 
-    const decreaseMinute=()=>{
+    const increaseMinute=()=>{
         if(minutes === 59){
             return;
         } 
         setMinutes((prev) => prev+1)
     }
 
-    const decreaseHours=()=>{
-        if(hours === 24){
+    const increaseHours=()=>{
+        setHours((prev) => prev+1)
+    }
+
+    const decreaseSecond=()=>{
+        if(seconds === 0){
             return;
         }
-        setHours((prev) => prev+1)
+        setSeconds((prev) => prev-1)
+    }
+
+    const decreaseMinute=()=>{
+        if(minutes === 0){
+            return;
+        }
+        setMinutes((prev) => prev-1);
+    }
+
+    const decreaseHours=()=>{
+        if(hours === 0){
+            return;
+        }
+        setHours((prev) => prev-1);
     }
     return(
         <div
@@ -65,19 +83,19 @@ const Timer=()=>{
                     {color:"white",
                     margin:"0px 80px 0px 80px",
                     fontSize:"20px"}
-                    }><img style={{width:"20px",height:"20px"}} onClick={"increaseSecond"} src={uparrow}/></p>
+                    }><img style={{width:"20px",height:"20px"}} onClick={increaseSecond} src={uparrow} alt="increasesecond"/></p>
                 <p 
                 style={
                     {color:"white",
                     margin:"0px 80px 0px 80px",
                     fontSize:"20px"}
-                    }><img style={{width:"20px",height:"20px"}} onClick={"increaseMinute"} src={uparrow}/></p>
+                    }><img style={{width:"20px",height:"20px"}} onClick={increaseMinute} src={uparrow} alt="increaseminute"/></p>
                 <p 
                 style={
                     {color:"white",
                     margin:"0px 80px 0px 80px",
                     fontSize:"20px"}
-                    }><img style={{width:"20px",height:"20px"}} onClick={"increaseHours"} src={uparrow}/></p>
+                    }><img style={{width:"20px",height:"20px"}} onClick={increaseHours} src={uparrow} alt="increasehour"/></p>
             </div>
             <div className={style.time} style={{display:"flex"}}>
                 <p 
@@ -105,19 +123,19 @@ const Timer=()=>{
                     {color:"white",
                     margin:"0px 80px 0px 80px",
                     fontSize:"20px"}
-                    }><img style={{width:"20px",height:"20px"}} onClick={"decreaseSecond"} src={downarrow}/></p>
+                    }><img style={{width:"20px",height:"20px"}} onClick={decreaseSecond} src={downarrow} alt=""/></p>
                 <p 
                 style={
                     {color:"white",
                     margin:"0px 80px 0px 80px",
                     fontSize:"20px"}
-                    }><img style={{width:"20px",height:"20px"}} onClick={"decreaseMinute"} src={downarrow}/></p>
+                    }><img style={{width:"20px",height:"20px"}} onClick={decreaseMinute} src={downarrow} alt="" /></p>
                 <p 
                 style={
                     {color:"white",
                     margin:"0px 80px 0px 80px",
                     fontSize:"20px"}
-                    }><img style={{width:"20px",height:"20px"}} onClick={"decreaseHours"} src={downarrow}/></p>
+                    }><img style={{width:"20px",height:"20px"}} onClick={decreaseHours} src={downarrow} alt=""/></p>
             </div>
             <button 
                 style={
