@@ -1,5 +1,4 @@
 import React from 'react'
-import Home from '../../components/Home/Home'
 import ProfileCard from '../../components/ProfileCard/ProfileCard'
 import Notes from '../../components/Notes/Notes'
 import News from '../../components/News/News'

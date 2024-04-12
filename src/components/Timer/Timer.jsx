@@ -7,30 +7,32 @@ const Timer=()=>{
     const[seconds,setSeconds]=useState(0);
     const[minutes,setMinutes]=useState(0);
     const[hours,setHours]=useState(0);
+    const[istimerstarted,setIsTimerStarted]=useState(false);
 
     const increaseSecond=()=>{
         if(seconds===59){
+            console.log("Seconds reached maximum value (59). Not increasing.");
             return;
         }
-        setSeconds((prev) => prev+1)
+        setSeconds((prev) => prev+1);
     }
 
     const increaseMinute=()=>{
         if(minutes === 59){
             return;
         } 
-        setMinutes((prev) => prev+1)
+        setMinutes((prev) => prev+1);
     }
 
     const increaseHours=()=>{
-        setHours((prev) => prev+1)
+        setHours((prev) => prev+1);
     }
 
     const decreaseSecond=()=>{
         if(seconds === 0){
             return;
         }
-        setSeconds((prev) => prev-1)
+        setSeconds((prev) => prev-1);
     }
 
     const decreaseMinute=()=>{
@@ -83,19 +85,20 @@ const Timer=()=>{
                     {color:"white",
                     margin:"0px 80px 0px 80px",
                     fontSize:"20px"}
-                    }><img style={{width:"20px",height:"20px"}} onClick={increaseSecond} src={uparrow} alt="increasesecond"/></p>
+                    }><img style={{width:"20px",height:"20px",cursor:"pointer"}} onClick={increaseSecond} src={uparrow} alt=""/>
+                </p>
                 <p 
                 style={
                     {color:"white",
                     margin:"0px 80px 0px 80px",
                     fontSize:"20px"}
-                    }><img style={{width:"20px",height:"20px"}} onClick={increaseMinute} src={uparrow} alt="increaseminute"/></p>
+                    }><img style={{width:"20px",height:"20px",cursor:"pointer"}} onClick={increaseMinute} src={uparrow} alt=""/></p>
                 <p 
                 style={
                     {color:"white",
                     margin:"0px 80px 0px 80px",
                     fontSize:"20px"}
-                    }><img style={{width:"20px",height:"20px"}} onClick={increaseHours} src={uparrow} alt="increasehour"/></p>
+                    }><img style={{width:"20px",height:"20px",cursor:"pointer"}} onClick={increaseHours} src={uparrow} alt=""/></p>
             </div>
             <div className={style.time} style={{display:"flex"}}>
                 <p 
@@ -103,19 +106,19 @@ const Timer=()=>{
                     {color:"white",
                     margin:"0px 85px 0px 85px",
                     fontSize:"20px"}
-                    }>0</p>
+                    }>{seconds}</p>
                 <p 
                 style={
                     {color:"white",
                     margin:"0px 85px 0px 85px",
                     fontSize:"20px"}
-                    }>0</p>
+                    }>{minutes}</p>
                 <p 
                 style={
                     {color:"white",
                     margin:"0px 85px 0px 85px",
                     fontSize:"20px"}
-                    }>0</p>
+                    }>{hours}</p>
             </div>
             <div className={style.time} style={{display:"flex"}}>
                 <p 
@@ -123,23 +126,26 @@ const Timer=()=>{
                     {color:"white",
                     margin:"0px 80px 0px 80px",
                     fontSize:"20px"}
-                    }><img style={{width:"20px",height:"20px"}} onClick={decreaseSecond} src={downarrow} alt=""/></p>
+                    }><img style={{width:"20px",height:"20px",cursor:"pointer"}} onClick={decreaseSecond} src={downarrow} alt=""/></p>
                 <p 
                 style={
                     {color:"white",
                     margin:"0px 80px 0px 80px",
                     fontSize:"20px"}
-                    }><img style={{width:"20px",height:"20px"}} onClick={decreaseMinute} src={downarrow} alt="" /></p>
+                    }><img style={{width:"20px",height:"20px",cursor:"pointer"}} onClick={decreaseMinute} src={downarrow} alt="" /></p>
                 <p 
                 style={
                     {color:"white",
                     margin:"0px 80px 0px 80px",
                     fontSize:"20px"}
-                    }><img style={{width:"20px",height:"20px"}} onClick={decreaseHours} src={downarrow} alt=""/></p>
+                    }><img style={{width:"20px",height:"20px",cursor:"pointer"}} onClick={decreaseHours} src={downarrow} alt=""/></p>
             </div>
-            <button 
+            <div 
+                onClick={()=>{
+                    setIsTimerStarted(!istimerstarted)                  
+                }}
                 style={
-                    {backgroundColor:"red",
+                    {backgroundColor:"#FF6A6A",
                     color:"white",
                     width:"28vw",
                     height:"40px",
@@ -147,9 +153,23 @@ const Timer=()=>{
                     borderRadius:"10px",
                     border:"none",
                     fontSize:"17px",
+                    textAlign:"center",
+                    paddingTop:"6px",
                     marginTop:"5px",
+                    cursor:"pointer",
                     marginLeft:"65px"}
-                    }>Stop</button>
+                    }>
+                        {/* to re-set the timer to 0 --> we'll click on stop to reset values to 0*/}
+                        {istimerstarted?
+                        <p 
+                            onClick={()=>{
+                                setHours(0);
+                                setMinutes(0);
+                                setSeconds(0)
+                            }}
+                        >
+                                Stop</p>:<p>Start</p>}
+                    </div>
         </div>
     )
 }

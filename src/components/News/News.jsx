@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import styles from '../News/News.module.css'
-
+import { useNavigate } from 'react-router-dom';
 // we are importing an api here
 import { getNewsDetails } from '../../apis/news';
 function News() {
     const [news,setnews]=useState([]);
-    
+    const navigate=useNavigate();
+        const navigateToMovies=()=>{
+            navigate("/movies");
+        }
     // to read data from api we are using useEffect here
     useEffect(()=>{
         fetchnews();
@@ -26,7 +29,7 @@ function News() {
                 <p>{news.description}</p>
             </div>
         </div>
-        <button className={styles.browse}>Browse</button>
+        <button onClick={navigateToMovies} className={styles.browse}>Browse</button>
         </div>
     )
 }
